@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dramarr.Data" Version="1.0.0.3" />
+    <PackageReference Include="Dramarr.Scrapers" Version="1.0.0.2" />
+  </ItemGroup>
+
+</Project>
