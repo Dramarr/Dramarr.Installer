@@ -44,9 +44,8 @@ namespace Dramarr.Installer.Scraper
             GetAllShows(Source.KSHOW)?.ForEach(x => allShows.Add(new Show(x)));
             GetAllShows(Source.ESTRENOSDORAMAS)?.ForEach(x => allShows.Add(new Show(x)));
 
-            var finalList = allShows.Where(x => !showsInDatabase.Exists(y => x.Url == y.Url)).ToList();
-
-            var distinctAux = finalList
+            var finalList = allShows
+                .Where(x => !showsInDatabase.Exists(y => x.Url == y.Url))
                 .GroupBy(x => x.Url)
                 .Select(x => x.First()).ToList();
 
