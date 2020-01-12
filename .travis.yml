@@ -1,0 +1,18 @@
+language:
+    csharp
+sudo: required
+mono: none 
+dotnet: 3.0
+
+os:
+  - linux
+
+global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+    - DOTNET_CLI_TELEMETRY_OPTOUT=true
+
+before_script:
+    - dotnet restore Dramarr.Installer/Dramarr.Installer.csproj
+        
+script:
+    - dotnet build Dramarr.Installer/Dramarr.Installer.csproj --configuration Release
